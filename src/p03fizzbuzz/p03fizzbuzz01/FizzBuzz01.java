@@ -8,49 +8,52 @@ public class FizzBuzz01 {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
-            System.out.println();
-            System.out.println("Pick Method 1 or 2: (1/2)");
+            System.out.println(); // newline
+            System.out.println("Pick Method 1 (If-Else) or 2 (Ternary): (1/2)");
+
             if (scanner.hasNext()) {
                 String chosenThang = scanner.next();
-                String print = "Method " + chosenThang + " is chosen";
+                System.out.println(); // newline
+
                 if (chosenThang.equals("1")) {
-                    System.out.println(print);
-                    method1();
+                    System.out.println("Method " + chosenThang + " is chosen");
+                    methodIfElse();
                     return;
                 } else if (chosenThang.equals("2")) {
-                    System.out.println(print);
-                    method2();
+                    System.out.println("Method " + chosenThang + " is chosen");
+                    methodTernary();
                     return;
                 } else {
                     System.out.println("Invalid input.");
                 }
+
             } else {
                 System.out.println("Program terminated.");
-                System.exit(0);
+                return;
             }
         }
     }
 
-    private static void method1() {
-        for (int x = 0; x <= 100; x++) {
-            if (x % 5 == 0 && x % 3 == 0) {
-                System.out.println(x + " FizzBuzz");
+    private static void methodIfElse() {
+        for (int x = 1; x <= 100; x++) {
+            if (x % 3 == 0 && x % 5 == 0) {
+                System.out.println("FizzBuzz");
             } else if (x % 3 == 0) {
-                System.out.println(x + " Fizz");
+                System.out.println("Fizz");
             } else if (x % 5 == 0) {
-                System.out.println(x + " Buzz");
+                System.out.println("Buzz");
             } else {
                 System.out.println(x);
             }
         }
     }
 
-    private static void method2() {
-        for (int x = 0; x <= 100; x++) {
+    private static void methodTernary() {
+        for (int x = 1; x <= 100; x++) {
             String printout = (x % 3 == 0 && x % 5 == 0) ? "FizzBuzz"
                     : (x % 3 == 0) ? "Fizz"
-                      : (x % 5 == 0) ? "Buzz" : "";
-            System.out.println(x + " " + printout);
+                      : (x % 5 == 0) ? "Buzz" : String.valueOf(x);
+            System.out.println(printout);
         }
     }
 }
