@@ -51,9 +51,7 @@ public class Calculator01 {
                 programRunningStatus = false;
                 System.out.println("Program terminated.");
             }
-
         }
-
     }
 
     private static String getOperationMethod(Scanner scanner) {
