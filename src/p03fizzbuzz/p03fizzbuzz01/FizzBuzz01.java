@@ -15,12 +15,13 @@ public class FizzBuzz01 {
                 String chosenThang = scanner.next();
                 System.out.println(); // newline
 
+                String print = "Method " + chosenThang + " is chosen";
                 if (chosenThang.equals("1")) {
-                    System.out.println("Method " + chosenThang + " is chosen");
+                    System.out.println(print);
                     methodIfElse();
                     return;
                 } else if (chosenThang.equals("2")) {
-                    System.out.println("Method " + chosenThang + " is chosen");
+                    System.out.println(print);
                     methodTernary();
                     return;
                 } else {
@@ -52,7 +53,8 @@ public class FizzBuzz01 {
         for (int x = 1; x <= 100; x++) {
             String printout = (x % 3 == 0 && x % 5 == 0) ? "FizzBuzz"
                     : (x % 3 == 0) ? "Fizz"
-                      : (x % 5 == 0) ? "Buzz" : String.valueOf(x);
+                      : (x % 5 == 0) ? "Buzz"
+                        : String.valueOf(x);
             System.out.println(printout);
         }
     }
